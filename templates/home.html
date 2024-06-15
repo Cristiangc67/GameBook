@@ -227,7 +227,6 @@
               ...
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
               <li>
                 <a
                   class="dropdown-item"
@@ -236,14 +235,28 @@
                 >
               </li>
               <li>
-                <a class="dropdown-item" href="#"
-                  ><form
-                    action="{{ url_for('delete', id=user.id) }}"
-                    method="post"
-                    style="display: inline"
+                <a class="dropdown-item" href="">Agregar a Favoritos</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="">Agregar a Deseados</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="">Agregar a Mi lista</a>
+              </li>
+
+              <li>
+                <form
+                  action="{{ url_for('delete', id=user.id) }}"
+                  class="dropdown-item p-0 m-0 bg-danger"
+                  method="post"
+                >
+                  <button
+                    type="submit"
+                    class="text-start text-white px-3 w-100 bg-transparent border-0"
                   >
-                    <input type="submit" value="Delete" /></form
-                ></a>
+                    Delete
+                  </button>
+                </form>
               </li>
             </ul>
           </div>

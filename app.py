@@ -29,6 +29,11 @@ def mislistas():
     return render_template("mislistas.html")
 
 
+@app.route("/mislistas/<int:id>")
+def selectedList():
+    return render_template("mislistas.html")
+
+
 @app.route("/create", methods=("GET", "POST"))
 def create():
     if request.method == "POST":
@@ -70,7 +75,7 @@ def delete(id):
     conn.execute("DELETE FROM users WHERE id = ?", (id,))
     conn.commit()
     conn.close()
-    return redirect(url_for("index"))
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
